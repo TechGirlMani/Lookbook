@@ -7,6 +7,7 @@ const lookbookRoutes = require('./routes/lookbooks')
 const app = express()
 
 // middleware 
+app.use(express.json())
 // to be able to move to next middleware
 app.use((req, rest, next) => {
     console.log(req.path, req.method)
