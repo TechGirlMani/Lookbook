@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require('express')
+const lookbookRoutes = require('./routes/lookbooks')
 
 // create express app
 const app = express()
@@ -13,9 +14,7 @@ app.use((req, rest, next) => {
 })
 
 // routes
-app.get('/', (req, res) => {
-    res.json({mssg: 'Welcome to the app'})
-})
+app.use(lookbookRoutes)
 
 // listen to requests on port 4000
 app.listen(process.env.PORT, () => {
