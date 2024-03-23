@@ -14,7 +14,8 @@ app.use((req, rest, next) => {
 })
 
 // routes
-app.use(lookbookRoutes)
+app.use('/api/lookbooks', lookbookRoutes)
+
 
 // listen to requests on port 4000
 app.listen(process.env.PORT, () => {
